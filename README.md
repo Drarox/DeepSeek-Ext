@@ -1,71 +1,97 @@
-# deepseek-ext README
+DeepSeek Chat VSCode Extension
+==============================
 
-This is the README for your extension "deepseek-ext". After writing up a brief description, we recommend including the following sections.
+A simple extension that allows you to chat with [DeepSeek](https://www.deepseek.com/) AI models using [Ollama](https://ollama.com/) inside VSCode. This extension enables seamless local AI-powered assistance directly within your code editor.
 
-## Features
+🚀 Prerequisites
+----------------
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Before using this extension, ensure that you have:
 
-For example if there is an image subfolder under your extension project workspace:
+1.  **Ollama installed** on your machine: [Download Ollama](https://ollama.com/download)
+    
+2.  A DeepSeek model pulled locally using Ollama. Run the following command to install a model you want to use:
+```shell
+ollama run deepseek-r1:1.5b
+```
+_(Replace `deepseek-r1:1.5b` with your preferred model size, such as `8b`, `14b`, etc.)_
+    
+3.  **Ollama running locally** for the extension to function.
+    
 
-\!\[feature X\]\(images/feature-x.png\)
+🔧 Installation
+---------------
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+To install this extension:
 
-## Requirements
+1.  Clone the repository or download the extension.
+    
+2.  Open the folder in VSCode.
+    
+3.  Run `npm install` to install dependencies.
+    
+4.  Use `F5` to launch a new Extension Development Host and test the extension.
+    
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+📌 Features
+-----------
 
-## Extension Settings
+*   Chat with DeepSeek AI models directly in VSCode.
+    
+*   Choose from multiple model sizes (`1.5B`, `8B`, `14B`, etc.).
+    
+*   Streamed responses for a fast and interactive experience.
+    
+*   Displays AI "thinking" process for improved UI/UX.
+    
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+🚀 Usage
+--------
 
-For example:
+1.  Open VSCode and start the extension with `Ctrl+Shift+P`, then select **`DeepSeek Chat`**.
+    
+2.  Choose the desired model from the dropdown list.
+    
+3.  Enter your prompt in the text box.
+    
+4.  Click **Ask** and receive a response in real-time.
+    
 
-This extension contributes the following settings:
+🎨 UI Preview
+-------------
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+![preview](https://raw.githubusercontent.com/Drarox/DeepSeek-Ext/master/metadata/imgs/preview.png)
 
-## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+🛠️ Development & Contribution
+------------------------------
 
-## Release Notes
+Want to improve this extension? Contributions are welcome!
 
-Users appreciate release notes as you update your extension.
+### To modify the extension:
 
-### 1.0.0
+*   Fork and clone this repository.
+    
+*   Install dependencies: `npm install`
+    
+*   Edit `src/extension.ts` for backend logic.
+    
+*   Modify `getWebviewContent()` for UI updates.
+    
+*   Test changes by running `F5` in VSCode.
+    
 
-Initial release of ...
+❌ Troubleshooting
+-----------------
 
-### 1.0.1
+**If the AI model is not found:**
 
-Fixed issue #.
+*   Ensure you have installed the model using `ollama run deepseek-r1:8b`.
+    
+*   Verify Ollama is running in the background.
+    
 
-### 1.1.0
+📜 License
+----------
 
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This extension is open-source and available under the MIT License.

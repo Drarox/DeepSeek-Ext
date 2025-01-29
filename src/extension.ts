@@ -20,6 +20,8 @@ export function activate(context: vscode.ExtensionContext) {
 				let responseText = '';
 
 				try {
+					panel.webview.postMessage({ command: 'chatThinking', text: '⏳ Thinking...' });
+
 					const streamResponse = await ollama.chat({
 						model: selectedModel,
 						messages: [{ role: 'user', content: userPrompt }],
@@ -28,6 +30,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 					for await (const part of streamResponse) {
 						responseText += part.message.content;
+						responseText = responseText.replace(/<\/?think>/, '');
+						responseText = responseText.replace(/^\s+/, '');
 						panel.webview.postMessage({ command: 'chatResponse', text: responseText });
 					}
 
